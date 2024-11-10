@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: url('../images/courtsoccer.jpeg'); 
+            background-size: cover;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            padding: 10px 15px;
+            background-color: rgba(0, 123, 255, 0.7); /* Blue with opacity */
+            border-radius: 15px;
+            margin-bottom: 5px;
+            width: fit-content;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        input[type="text"]:hover, input[type="number"]:hover, select:hover {
+            background-color: #f0f8ff; /* Light blue background on hover */
+        }
+
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            background-color: rgba(0, 123, 255, 0.7);
+            padding: 10px;
+            border-radius: 15px;
+            width: fit-content;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 225px;
+            border-radius: 25px;
+            border: 1px solid #007BFF;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.active {
+            background-color: #28a745; /* Green background when active */
+            border-color: #28a745;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Your Profile</h1>
+    <form id="profile-form">
+        <!-- Profile Information -->
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select your Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+
+        <div class="button-container">
+            <button type="button" onclick="saveProfileData()">Next Page</button>
+        </div>
+    </form>
+
+    <script>
+        // Save profile data to localStorage
+        function saveProfileData() {
+            // Collect form data
+            const profileData = {
+                firstName: document.getElementById('first-name').value,
+                lastName: document.getElementById('last-name').value,
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                address: document.getElementById('address').value
+            };
+
+            // Save the data to localStorage
+            localStorage.setItem('profileData', JSON.stringify(profileData));
+
+            // Optionally, you can navigate to another page or section
+            alert("Profile saved! Redirecting...");
+            window.location.href = 'next-page.html';  // Adjust this URL for your next page
+        }
+
+        // Load profile data if it exists in localStorage
+        window.onload = function() {
+            const savedProfileData = JSON.parse(localStorage.getItem('profileData'));
+            if (savedProfileData) {
+                document.getElementById('first-name').value = savedProfileData.firstName;
+                document.getElementById('last-name').value = savedProfileData.lastName;
+                document.getElementById('age').value = savedProfileData.age;
+                document.getElementById('gender').value = savedProfileData.gender;
+                document.getElementById('address').value = savedProfileData.address;
+            }
+        }
+    </script>
+</body>
+</html>
+
