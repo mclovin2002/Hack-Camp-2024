@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Team Selection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .sidebar, .main, .sidebar-right {
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 600px;
+        }
+        .sidebar, .sidebar-right {
+            width: 20%;
+            background-color: #f4f4f4;
+        }
+        .main {
+            width: 55%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .player-list img, .court-player img {
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+        }
+        .court {
+            margin: 20px 0;
+            background-color: #f4c2a8;
+            height: 300px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .court-player {
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <h4>Top players in your neighborhood</h4>
+            <div class="player-list">
+                {% for player in players %}
+                <div>
+                    <img src="{{ player.image_url }}" alt="{{ player.name }}">
+                    <p>{{ player.name }}</p>
+                    <p># Games: {{ player.num_games }}</p>
+                    <p>W/L: {{ player.win_loss_ratio }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Main Section -->
+        <div class="main">
+            <h2>Basketball</h2>
+            <p>Choose Your Team</p>
+            <button class="btn btn-primary">Confirm Zone</button>
+            <button class="btn btn-secondary">Meet Another Team</button>
+            <button class="btn btn-info">Join Another Team</button>
+
+            
+
+            <button class="btn btn-success">Confirm Team and Find Opponent</button>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar-right">
+            <h4>Popular courts for basketball</h4>
+            {% for venue in venues %}
+            <div>
+                <p>{{ venue.name }}</p>
+                <p>{{ venue.address }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

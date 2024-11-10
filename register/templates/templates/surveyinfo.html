@@ -34,7 +34,7 @@
             width: fit-content;
         }
 
-        input[type="text"], input[type="number"], select {
+        input[type="text"], input[type="number"], input[type="date"], select {
             width: 100%;
             padding: 10px;
             border-radius: 15px;
@@ -44,21 +44,7 @@
             transition: background-color 0.3s;
         }
 
-        input[type="text"], input[type="number"], input[type="date"], select {
-        width: 100%;
-        padding: 10px;
-        border-radius: 15px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        outline: none;
-        transition: background-color 0.3s;
-    }
-
-    input[type="text"]:hover, input[type="number"]:hover, input[type="date"]:hover, select:hover {
-        background-color: #f0f8ff; /* Light blue background on hover */
-    }
-
-        input[type="text"]:hover, input[type="number"]:hover, select:hover {
+        input[type="text"]:hover, input[type="number"]:hover, input[type="date"]:hover, select:hover {
             background-color: #f0f8ff; /* Light blue background on hover */
         }
 
@@ -73,24 +59,17 @@
         }
 
         .button-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            text-align: center;
         }
 
         button {
-            padding: 10px 225px;
+            padding: 10px 20px;
             border-radius: 25px;
             border: 1px solid #007BFF;
             background-color: #007BFF;
             color: white;
             cursor: pointer;
             transition: background-color 0.3s;
-        }
-
-        button.active {
-            background-color: #28a745; /* Green background when active */
-            border-color: #28a745;
         }
 
         button:hover {
@@ -100,7 +79,7 @@
 </head>
 <body>
     <h1>Create Your Profile</h1>
-    <form id="profile-form">
+    <form action='next-page.html' method="POST">
         <!-- Profile Information -->
         <div class="form-group">
             <label for="first-name">First Name</label>
@@ -133,42 +112,11 @@
         </div>
 
         <div class="button-container">
-            <button type="button" onclick="saveProfileData()">Next Page</button>
+            <!-- Change button to a submit button -->
+            <button type="submit">Next Page</button>
         </div>
     </form>
-
-    <script>
-        // Save profile data to localStorage
-        function saveProfileData() {
-            // Collect form data
-            const profileData = {
-                firstName: document.getElementById('first-name').value,
-                lastName: document.getElementById('last-name').value,
-                age: document.getElementById('birthdate').value,
-                gender: document.getElementById('gender').value,
-                address: document.getElementById('address').value
-            };
-
-            // Save the data to localStorage
-            localStorage.setItem('profileData', JSON.stringify(profileData));
-
-            // Optionally, you can navigate to another page or section
-            alert("Profile saved! Redirecting...");
-            window.location.href = 'next-page.html';  // Adjust this URL for your next page
-        }
-
-        // Load profile data if it exists in localStorage
-        window.onload = function() {
-            const savedProfileData = JSON.parse(localStorage.getItem('profileData'));
-            if (savedProfileData) {
-                document.getElementById('first-name').value = savedProfileData.firstName;
-                document.getElementById('last-name').value = savedProfileData.lastName;
-                document.getElementById('age').value = savedProfileData.age;
-                document.getElementById('gender').value = savedProfileData.gender;
-                document.getElementById('address').value = savedProfileData.address;
-            }
-        }
-    </script>
 </body>
 </html>
+
 
