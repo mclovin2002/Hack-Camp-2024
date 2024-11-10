@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Basketball Profile</h1>
-    <form>
+    <form action="example.html" method="POST">
         <!-- Profile Information -->
         <div class="form-group">
             <label for="age-group"> What was the most professional level you played?</label>
@@ -59,20 +59,5 @@
             <input type="text" id="FavTennisPlayer" name="FavTennisPlayer" required>
         </div>
     </form>
-
-    <script>
-        function selectSport(button, sportName) {
-            // Remove active class from all buttons
-            const buttons = document.querySelectorAll('.button-container button');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            // Add active class to the clicked button
-            button.classList.add('active');
-
-            // Redirect to a new page
-            const baseUrl = window.location.origin; // Base URL of the site
-            window.location.href = `${baseUrl}/${sportName}`;
-        }
-    </script>
 </body>
 </html>
