@@ -69,8 +69,8 @@ class BasketballInfo(models.Model):
     athlete = models.ForeignKey(Athlete, on_delete=models.PROTECT)
     experience = models.CharField(
         max_length=1, choices=EXPERIENCE_CHOICES)
-    positiom = models.ForeignKey(Athlete, on_delete=models.PROTECT)
-    experience = models.CharField(
+    
+    position = models.CharField(
         max_length=2, choices=POSITION_CHOICES)
     frequency_of_play = models.CharField(
         max_length=1, choices=FREQUENCY_CHOICES
