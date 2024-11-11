@@ -8,41 +8,96 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e6e6e6;
+            margin: 0;
+            padding: 0;
         }
+
         .container {
             display: flex;
             justify-content: space-between;
-            margin: 20px;
-        }
-        .sidebar, .main, .sidebar-right {
             padding: 20px;
-            border-radius: 8px;
-            min-height: 600px;
         }
+
         .sidebar, .sidebar-right {
             width: 20%;
             background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
         }
+
         .main {
             width: 55%;
             background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
         }
-        .player-list img, .court-player img {
-            border-radius: 50%;
-            height: 50px;
-            width: 50px;
-        }
+
         .court {
-            margin: 20px 0;
-            background-color: #f4c2a8;
+            margin: 20px auto;
+            background: url("../images/basketball-half.webp");
             height: 300px;
-            border-radius: 8px;
+            width: 500px;
+            border-radius: 10px;
             position: relative;
+            transform: rotate(180deg);
         }
-        .court-player {
+
+        .hoop {
             position: absolute;
-            transform: translate(-50%, -50%);
+            left: 10px;
+            width: 50px;
+            height: 30px;
+            background-color: red;
+            border-radius: 5px;
+        }
+
+        .button {
+            position: absolute;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Updated positions for rotated layout */
+        .btn1 {
+            top: 50%;
+            left: 10%;
+            
+        }
+
+        .btn2 {
+            top: 25%;
+            left: 30%;
+            
+        }
+
+        .btn3 {
+            top: 75%;
+            left: 30%;
+            
+        }
+
+        .btn4 {
+            top: 25%;
+            left: 70%;
+            
+        }
+
+        .btn5 {
+            top: 75%;
+            left: 70%;
+            
         }
     </style>
 </head>
@@ -52,40 +107,51 @@
         <div class="sidebar">
             <h4>Top players in your neighborhood</h4>
             <div class="player-list">
-                {% for player in players %}
+                <!-- Example player list content -->
                 <div>
-                    <img src="{{ player.image_url }}" alt="{{ player.name }}">
-                    <p>{{ player.name }}</p>
-                    <p># Games: {{ player.num_games }}</p>
-                    <p>W/L: {{ player.win_loss_ratio }}</p>
+                    <img src="https://via.placeholder.com/50" alt="Player Image">
+                    <p>Player 1</p>
+                    <p># Games: 10</p>
+                    <p>W/L: 0.5</p>
                 </div>
-                {% endfor %}
             </div>
         </div>
 
-        <!-- Main Section -->
+        <!-- Main Section with Rotated Court -->
         <div class="main">
             <h2>Basketball</h2>
             <p>Choose Your Team</p>
-            <button class="btn btn-primary">Confirm Zone</button>
-            <button class="btn btn-secondary">Meet Another Team</button>
-            <button class="btn btn-info">Join Another Team</button>
-
-            
-
-            <button class="btn btn-success">Confirm Team and Find Opponent</button>
+            <div class="court">
+                <div class="hoop"></div>
+                
+                <!-- Buttons for Player Invitations -->
+                <button class="button btn1" onclick="invitePlayer()">1</button>
+                <button class="button btn2" onclick="invitePlayer()">2</button>
+                <button class="button btn3" onclick="invitePlayer()">3</button>
+                <button class="button btn4" onclick="invitePlayer()">4</button>
+                <button class="button btn5" onclick="invitePlayer()">5</button>
+            </div>
         </div>
 
         <!-- Right Sidebar -->
         <div class="sidebar-right">
             <h4>Popular courts for basketball</h4>
-            {% for venue in venues %}
+            <!-- Example venue list content -->
             <div>
-                <p>{{ venue.name }}</p>
-                <p>{{ venue.address }}</p>
+                <p>Court 1</p>
+                <p>Address 1</p>
             </div>
-            {% endfor %}
         </div>
     </div>
+
+    <script>
+        function invitePlayer() {
+            const email = prompt("Enter the email address to invite:");
+            if (email) {
+                alert(`Invitation sent to ${email}`);
+            }
+        }
+    </script>
 </body>
 </html>
+

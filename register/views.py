@@ -31,3 +31,21 @@ def create_athlete(request):
 
 def sport_select(request):
     return render(request, 'templates/surveySports.html')
+
+
+def basketball(request):
+    if request.method == "GET":
+        return render(request, 'templates/SurveyBasketball.html')
+
+    elif request.method == "POST":
+        print(request.body)
+        return redirect('/')
+
+
+def tennis(request):
+    if request.method == "GET":
+        return render(request, 'templates/surveyTennis.html')
+
+    elif request.method == "POST":
+        print(request.body)
+        return redirect('/')
