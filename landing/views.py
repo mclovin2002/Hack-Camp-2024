@@ -4,4 +4,8 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'templates/home page.html')
+    return render(request, 'home page.html')
+
+
+def hostTeam(request):
+    return render(request, 'templates/Basketballteam.html')

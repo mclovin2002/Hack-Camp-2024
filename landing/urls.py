@@ -5,5 +5,6 @@ from landing import views
 urlpatterns = [
 
     path('', views.home),
+    path('hostTeam/', views.hostTeam),
 
 ]
