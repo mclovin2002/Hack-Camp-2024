@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Your Court</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side - Booking Your Court -->
+        <div class="booking-section">
+            <h2>Booking Your Court</h2>
+            <div class="court-card">
+                <img src="court1.jpg" alt="Court 1">
+                <button class="split-button">Split between Player</button>
+                <button class="full-price-button">Pay Full Price</button>
+            </div>
+            <div class="court-card">
+                <img src="court2.jpg" alt="Court 2">
+                <button class="split-button">Split between Player</button>
+                <button class="full-price-button">Pay Full Price</button>
+            </div>
+            <div class="court-card">
+                <img src="court3.jpg" alt="Court 3">
+                <button class="split-button">Split between Player</button>
+                <button class="full-price-button">Pay Full Price</button>
+            </div>
+            <div class="court-card">
+                <img src="court4.jpg" alt="Court 4">
+                <button class="split-button">Split between Player</button>
+                <button class="full-price-button">Pay Full Price</button>
+            </div>
+        </div>
+
+        <!-- Right Side - Free Courts Near You -->
+        <div class="free-courts-section">
+            <h2>Free Courts near you</h2>
+            <div class="free-court-card">
+                <img src="freecourt1.jpg" alt="Free Court 1">
+                <button class="directions-button">Get Directions</button>
+                <button class="distance-button">2 km</button>
+            </div>
+            <div class="free-court-card">
+                <img src="freecourt2.jpg" alt="Free Court 2">
+                <button class="directions-button">Get Directions</button>
+                <button class="distance-button">500 m</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<style> 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px 0;
+}
+
+.booking-section {
+    width: 60%;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.booking-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #3b61cf;
+}
+
+.court-card {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.court-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.split-button, .full-price-button {
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.split-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.full-price-button {
+    background-color: #3b61cf;
+    color: white;
+}
+
+.free-courts-section {
+    width: 35%;
+    padding: 20px;
+    background-color: #e0ecef;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.free-courts-section h2 {
+    font-size: 20px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.free-court-card {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.free-court-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.directions-button, .distance-button {
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.directions-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.distance-button {
+    background-color: #3b61cf;
+    color: white;
+}
+
+</style>
