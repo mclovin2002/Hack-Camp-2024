@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Your Sport</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url("../images/track.webp");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+        color: blue;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%; /* Takes up 80% of the screen width */
+        max-width: 1200px; /* Optional: limits the maximum width */
+      }
+
+      button {
+        width: 40%; /* Each button takes up 40% of the container */
+        padding: 100px 20px;
+        border-radius: 50px;
+        border: 1px solid #007bff;
+        background-color: #007bff;
+        color: black;
+        font-size: 18px;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s, background-image 0.3s;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button.active {
+        background-color: #28a745;
+        border-color: #28a745;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      button.basketball:hover {
+        background-image: url("../images/bball.png"); /* Path to basketball image */
+      }
+
+      button.tennis:hover {
+        background-image: url("../images/tennis.png"); /* Path to tennis image */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">Select Your Sport</div>
+    <div class="button-container">
+      <button
+        type="button"
+        class="basketball"
+        onclick="selectSport(this, 'Basketball')"
+      >
+        Basketball
+      </button>
+      <button
+        type="button"
+        class="tennis"
+        onclick="selectSport(this, 'Tennis')"
+      >
+        Tennis
+      </button>
+    </div>
+
+    <script>
+      function selectSport(button, sportName) {
+        const buttons = document.querySelectorAll(".button-container button");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        const baseUrl = window.location.origin; // Base URL of the site
+        window.location.href = `${sportName}`;
+      }
+    </script>
+  </body>
+</html>

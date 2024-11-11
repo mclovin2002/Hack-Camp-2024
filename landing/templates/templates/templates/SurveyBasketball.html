@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: url("../images/basketballcourt.webp");
+        background-size: cover;
+        /* color: #fff; /* Text color for better contrast on background */
+      }
+
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        padding: 10px 15px;
+        background-color: rgba(0, 123, 255, 0.7); /* Blue with opacity */
+        border-radius: 15px;
+        margin-bottom: 5px;
+        width: fit-content;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        outline: none;
+        transition: background-color 0.3s;
+      }
+
+      input[type="text"]:hover,
+      input[type="number"]:hover,
+      select:hover {
+        background-color: #f0f8ff; /* Light blue background on hover */
+      }
+
+      .section-title {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        background-color: rgba(0, 123, 255, 0.7);
+        padding: 10px;
+        border-radius: 15px;
+        width: fit-content;
+      }
+
+      .button-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px 225px;
+        border-radius: 25px;
+        border: 1px solid #007bff;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button.active {
+        background-color: #28a745; /* Green background when active */
+        border-color: #28a745;
+      }
+
+      button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Basketball Profile</h1>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <!-- Profile Information -->
+      <div class="form-group">
+        <label for="age-group">
+          What was the most professional level you played?</label
+        >
+        <select id="age-group" name="age-group" required>
+          <option value="">Select your skill level</option>
+          <option value="Professional">Professional</option>
+          <option value="College varsity">College varsity</option>
+          <option value="Professional Academies">Professional Academies</option>
+          <option value="High School varsity">High School varsity</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Newbie">Newbie</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="age-group"> How often do you play?</label>
+        <select id="age-group" name="age-group" required>
+          <option value="">Select your frequency</option>
+          <option value="More than once a week">More than once a week</option>
+          <option value="Weekly">Weekly</option>
+          <option value="Monthly">Monthly</option>
+          <option value="Rarely">Rarely</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">What is your dominant hand?</label>
+        <select id="age-group" name="age-group" required>
+          <option value="">Select your frequency</option>
+          <option value="Left">Left</option>
+          <option value="Right">Right</option>
+          <option value="Either">Either</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="last-name">What gender do you want to play with?</label>
+        <select id="age-group" name="age-group" required>
+          <option value="">Select your preferred gender</option>
+          <option value="All-male">All-male</option>
+          <option value="All-female">All-female</option>
+          <option value="Co-ed">Co-ed</option>
+          <option value="No Preference">No Preference</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="FavTennisPlayer">Who's your favourite tennis player?</label>
+        <input
+          type="text"
+          id="FavTennisPlayer"
+          name="FavTennisPlayer"
+          required
+        />
+      </div>
+      <div class="button-container">
+        <!-- Change button to a submit button -->
+        <button type="submit">Done</button>
+      </div>
+    </form>
+  </body>
+</html>
