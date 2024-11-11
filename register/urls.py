@@ -3,5 +3,6 @@ from django.urls import path
 from register import views
 
 urlpatterns = [
-    path('', views.temp),
+    path('', views.create_athlete),
+    path('sports/', views.sport_select, name='servey-sports'),
 ]

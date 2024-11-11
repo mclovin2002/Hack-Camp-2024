@@ -1,10 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from landing.models import Athlete
 # Create your views here.
 
 
-def temp(request):
+def create_athlete(request):
+    if request.method == "GET":
+        return render(request, 'templates/surveyinfo.html')
 
-    # query = Athlete.objects.get(pk=1)
-    # a = list(query)
-    return render(request, 'temp.html', {'name': a[1].name})
+    elif request.method == "POST":
+        print(request.body)
+        return redirect('servey-sports')
+
+
+def sport_select(request):
+    return render(request, 'templates/surveySports.html')
