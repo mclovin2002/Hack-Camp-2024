@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <header>
+            <div class="navbar">
+                <div class="menu-icon">☰</div>
+                
+                
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Left Side - Notifications -->
+            <div class="notifications">
+                <h2>Notifications</h2>
+                <div class="notification">
+                    <img src="user1.jpg" alt="User 1">
+                    <p>Abdul became the MVP in Canada this week</p>
+                </div>
+                <div class="notification">
+                    <img src="user2.jpg" alt="User 2">
+                    <p>Sydney sent you a running invitation</p>
+                </div>
+                <div class="notification">
+                    <img src="user3.jpg" alt="User 3">
+                    <p>Walter sent you a friend request</p>
+                </div>
+                <div class="notification">
+                    <img src="user4.jpg" alt="User 4">
+                    <p>Your next golf round with Sam is tomorrow</p>
+                </div>
+            </div>
+
+            <!-- Center - Main Content -->
+            <div class="main-content">
+                <h1>Good afternoon, Arash</h1>
+                <div class="buttons">
+                    <button class="action-button">Host a Game</button>
+                    <button class="action-button">Join a Game</button>
+                    <button class="action-button">Train</button>
+                    <button class="action-button">Find Games near me</button>
+                </div>
+            </div>
+
+            <!-- Right Side - Map -->
+            <div class="map-section">
+                <h2>📍 UBC, Vancouver, BC</h2>
+                <img src="map.png" alt="Map of UBC">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.action-button:hover, .split-button:hover, .full-price-button:hover, .directions-button:hover, .distance-button:hover {
+    background-color: #d3d3d3; /* Light gray color */
+    color: #111; /* Change text color if needed for better contrast */
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.menu-icon,  {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.notifications {
+    width: 25%;
+    padding: 20px;
+    background-color: #111;
+    color: white;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.notifications h2 {
+    margin-bottom: 15px;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.notification img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.notification p {
+    font-size: 14px;
+}
+
+.main-content {
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-button {
+    padding: 15px;
+    font-size: 16px;
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.map-section {
+    width: 30%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.map-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.map-section img {
+    width: 100%;
+    border-radius: 10px;
+}
+</style>
