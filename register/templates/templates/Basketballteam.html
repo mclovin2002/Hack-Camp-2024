@@ -72,31 +72,58 @@
         .btn1 {
             top: 50%;
             left: 50%;
-            
         }
 
         .btn2 {
             top: 25%;
             left: 30%;
-            
         }
 
         .btn3 {
             top: 75%;
             left: 30%;
-            
         }
 
         .btn4 {
             top: 25%;
             left: 70%;
-            
         }
 
         .btn5 {
             top: 75%;
             left: 70%;
-            
+        }
+
+        /* New CSS for Requests to Join section */
+        .requests-section {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .requests-section h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .requests-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .requests-section ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .requests-section ul li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
@@ -141,6 +168,16 @@
         </div>
     </div>
 
+    <!-- New Requests to Join Section -->
+    <div class="requests-section">
+        <h4>Requests to Join</h4>
+        <ul>
+            <li>John Doe</li>
+            <li>Jane Smith</li>
+            <li>Alex Johnson</li>
+        </ul>
+    </div>
+
     <script>
         function invitePlayer() {
             const email = prompt("Enter the email address to invite:");
@@ -151,4 +188,5 @@
     </script>
 </body>
 </html>
+
 
