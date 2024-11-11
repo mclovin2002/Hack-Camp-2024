@@ -76,7 +76,7 @@
 </head>
 <body>
     <h1>Tennis Profile</h1>
-    <form id="tennis-form">
+    <form action="https://example.com" method="GET">
         <div class="form-group">
             <label for="skill-level">What was the most professional level you played?</label>
             <select id="skill-level" name="skill-level" required>
@@ -131,35 +131,5 @@
             <button type="button" onclick="saveSurvey()">Save Survey</button>
         </div>
     </form>
-
-    <script>
-        // Save the survey data to localStorage when the button is clicked
-        function saveSurvey() {
-            const formData = {
-                skillLevel: document.getElementById('skill-level').value,
-                frequency: document.getElementById('frequency').value,
-                dominantHand: document.getElementById('dominant-hand').value,
-                preferredGender: document.getElementById('preferred-gender').value,
-                favPlayer: document.getElementById('fav-player').value
-            };
-
-            // Save form data to localStorage
-            localStorage.setItem('tennisProfile', JSON.stringify(formData));
-
-            alert('Survey saved!');
-        }
-
-        // Pre-fill the form with saved data if available
-        window.onload = function() {
-            const savedData = JSON.parse(localStorage.getItem('tennisProfile'));
-            if (savedData) {
-                document.getElementById('skill-level').value = savedData.skillLevel;
-                document.getElementById('frequency').value = savedData.frequency;
-                document.getElementById('dominant-hand').value = savedData.dominantHand;
-                document.getElementById('preferred-gender').value = savedData.preferredGender;
-                document.getElementById('fav-player').value = savedData.favPlayer;
-            }
-        }
-    </script>
 </body>
 </html>
