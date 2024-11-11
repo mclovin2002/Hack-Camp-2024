@@ -4,5 +4,5 @@ from register import views
 
 urlpatterns = [
     path('', views.create_athlete),
-    path('sports/', views.sport_select, name='servey-sports'),
+    path('sports/', views.sport_select, name='survey-sports'),
 ]
